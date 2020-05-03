@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+	<head>
+		<title>Saqueador imágenes</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
+		<script type="text/javascript" src="app.js"></script>
+		<script src="jszip/dist/jszip.min.js"></script>
+		<script src="jszip-utils/dist/jszip-utils.min.js"></script>
+		<script src="node_modules/file-saver/FileSaver.min.js"></script>
+	</head>
+	<body>
+		<div id="wrap" ng-controller="ControladorDescargar">
+			<h2>Descarga galerías de imágenes</h2>
+			<hr>
+			<form id="formulario-imagenes">
+				<div class="formulario-div">
+					<label>» URL de la galería</label>
+					<input type="text" id="url-galeria" ng-model="urlname" name="urlgaleria" placeholder="Ej. https://gematsu.com/gallery/new-gundam-breaker/march-26-2018/">
+				</div>
+				<div class="formulario-div">
+					<label>» Nombre base de las imágenes (sin tildes ni símbolos)</label>
+					<input type="text" id="nombre-base-imagenes" ng-model="nombrebase" name="nombre-base-imagenes" placeholder="Ej. Nuevas imagenes de Dragon Ball FighterZ">
+				</div>
+				<button type="submit" ng-click="download()">Descargar</button>
+
+			</form>
+		</div>
+	</body>
+	<footer>
+		<h4>© Diseño y desarrollo por Silvia Piñeiro para koi-nya.net. 2018.</h4>
+	</footer>
+</html>

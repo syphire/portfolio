@@ -1,0 +1,404 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Titillium Web", sans-serif; }
+
+#pokedex {
+  width: 650px;
+  margin: 0 auto;
+  margin-top: 20px; }
+
+#arriba, #abajo {
+  width: 100%;
+  height: 300px;
+  display: flex; }
+
+/* PARTE DE ARRIBA */
+#arriba {
+  flex-wrap: wrap; }
+
+#tapa {
+  display: flex;
+  width: 62%;
+  height: 250px;
+  margin-left: 19%;
+  min-width: auto;
+  min-height: auto;
+  background: #C00D0D;
+  box-shadow: -7px 8px 1px 2px #600707;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px; }
+
+#pokeball-exterior {
+  width: 110px;
+  height: 110px;
+  border-radius: 150px;
+  align-self: center;
+  margin: 0 auto;
+  border: 50px solid rgba(0, 0, 0, 0.3); }
+
+#tapa-interior {
+  display: flex; }
+
+#pokeball-interior {
+  width: 60px;
+  height: 60px;
+  background: #51AE5F;
+  border-radius: 50px;
+  border: 9px solid #870909;
+  position: absolute;
+  z-index: 100;
+  margin: 85px auto auto -241px; }
+
+#barra-roja {
+  width: 210px;
+  height: 30px;
+  background: #C00D0D;
+  margin: 110px auto auto -307px; }
+
+#union {
+  display: flex;
+  width: 81%;
+  min-width: auto;
+  min-height: auto;
+  height: 50px;
+  background: linear-gradient(to bottom, #8B0000, #C00D0D, #8B0000);
+  border-right: solid #600707 1px;
+  box-shadow: 0px 2px 5px 0px #600707;
+  z-index: 150;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px; }
+
+#bisagra-uno {
+  width: 30px;
+  height: 50px;
+  background: linear-gradient(to bottom, #600707, #C00D0D, #600707);
+  border-right: solid #600707 2px;
+  box-shadow: -10px 4px 1px 0px #600707;
+  border-top-left-radius: 3px; }
+
+#bisagra-dos {
+  width: 50px;
+  height: 50px;
+  margin: 0px auto auto 112px;
+  background: linear-gradient(to bottom, #600707, #C00D0D, #600707);
+  border-right: solid #600707 2px;
+  border-left: solid #600707 2px; }
+
+#bisagra-tres {
+  width: 50px;
+  height: 50px;
+  margin: 0px auto auto 238px;
+  background: linear-gradient(to bottom, #600707, #C00D0D, #600707);
+  border-right: solid #600707 2px;
+  border-left: solid #600707 2px; }
+
+/* PARTE DE ABAJO */
+#abajo {
+  flex-wrap: nowrap; }
+
+#abajo-izquierda {
+  width: 20%;
+  background: #8B0000;
+  display: flex;
+  flex-flow: wrap;
+  box-shadow: -4px 4px 1px 6px #600707;
+  z-index: 120;
+  border-bottom-left-radius: 50px; }
+
+#botones-verdes {
+  display: flex;
+  flex-wrap: wrap; }
+
+#boton-verde-uno, #boton-verde-dos {
+  width: 20px;
+  height: 20px;
+  background: #51AE5F;
+  margin: 10px;
+  box-shadow: -4px 1px 0px -1px #3A8344;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px; }
+
+#boton-verde-uno {
+  margin: 30px auto auto 0px; }
+
+#boton-verde-dos {
+  margin: 60px auto auto -20px; }
+
+#boton-azul {
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(#A9E9F7, #1DC6EC);
+  border-radius: 50px;
+  align-self: flex-end;
+  margin-bottom: 30px;
+  margin-left: 10px;
+  box-shadow: 0px 1px 3px 4px #600707; }
+
+#reflejo-azul {
+  width: 30px;
+  height: 15px;
+  z-index: 150;
+  background: #A0F2FA;
+  border-radius: 10px;
+  margin: 10px auto; }
+
+#abajo-centro {
+  width: 59%;
+  display: flex;
+  flex-flow: wrap;
+  padding: 20px;
+  background: #C00D0D;
+  border: 1px solid #600707;
+  box-shadow: -4px 8px 1px 2px #600707; }
+
+#pantalla {
+  display: flex;
+  width: 100%;
+  height: 96%;
+  border-radius: 10px;
+  background: #424242; }
+
+#pantalla-interior {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 190px;
+  margin: 20px;
+  margin-bottom: 28px;
+  border-radius: 3px;
+  background: #fff;
+  border-radius: 5px;
+  border: 5px solid #B0B0B0; }
+
+/* CAJA DE BÚSQUEDA */
+#caja-busqueda {
+  margin: 0 auto;
+  margin-top: 10px;
+  height: 40px; }
+
+#resultado-busqueda {
+  width: 100%;
+  display: flex;
+  position: relative; }
+
+/* MIENTRAS SE CARGA LA BÚSQUEDA */
+#texto-carga {
+  display: none;
+  position: absolute;
+  margin: -55px auto auto 110px; }
+
+#imagen-carga {
+  display: none;
+  width: 120px;
+  position: absolute;
+  margin: -20px auto auto 93px; }
+
+#imagen-pokemon {
+  width: 43%;
+  height: 100%;
+  padding: 10px; }
+
+#imagen-pokemon img {
+  width: 100%;
+  height: auto; }
+
+#info-error {
+  display: none;
+  margin-top: -60px;
+  margin-left: 79px;
+  width: 100%; }
+
+#img-error {
+  display: none;
+  width: 100px;
+  position: absolute;
+  margin: -27px auto auto 100px; }
+
+#info-pokemon {
+  margin: 0 auto;
+  padding-top: 10px; }
+
+#info-pokemon h2 {
+  padding-bottom: 10px; }
+
+#tipos {
+  list-style-type: square;
+  margin-left: 20px;
+  margin-top: 3px; }
+
+#pokemon {
+  width: 220px;
+  border: 0;
+  border-bottom: 2px solid #B0B0B0;
+  font-size: 16px;
+  padding-left: 5px; }
+
+#buscar {
+  width: 55px;
+  height: 23px;
+  background: #C00D0D;
+  border: 1px solid #8B0000;
+  border-radius: 3px;
+  color: #fff;
+  margin-left: 5px;
+  font-size: 14px; }
+
+#pantalla-botones {
+  width: 100%;
+  height: 40px;
+  border-radius: 20px;
+  background: #424242;
+  margin-top: -28px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center; }
+
+#botones {
+  display: flex;
+  background: #000;
+  padding: 5px;
+  border-radius: 5px; }
+
+#boton-izquierda {
+  width: 45px;
+  height: 10px;
+  background: #fff;
+  margin-right: 8px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: flex-end;
+  box-shadow: -2px 1px 0px 1px #B0B0B0; }
+
+#boton-interior-izq {
+  width: 20px;
+  height: 10px;
+  background: #fff;
+  box-shadow: 0px 3px 0px -1px #B0B0B0;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px; }
+
+#boton-derecha {
+  width: 45px;
+  height: 10px;
+  background: #fff;
+  margin-left: 8px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 0px -2px #B0B0B0; }
+
+#boton-interior-dcha {
+  width: 20px;
+  height: 10px;
+  background: #fff;
+  box-shadow: -3px 2px 0px 0px #B0B0B0;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px; }
+
+#abajo-derecha {
+  display: flex;
+  flex-wrap: wrap;
+  width: 20%;
+  height: 100%; }
+
+#espacio-vacio {
+  background: transparent;
+  width: 100%;
+  height: 50%; }
+
+#circulo {
+  width: 100%;
+  height: 38%;
+  background: #8B0000;
+  border-bottom-right-radius: 100px;
+  border-top-right-radius: 100px;
+  padding-top: 18px;
+  padding-right: 18px;
+  padding-bottom: 18px;
+  align-self: flex-end;
+  box-shadow: -6px 8px 1px 2px #600707; }
+
+#circulo-interior {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  background: #424242;
+  border-bottom-right-radius: 100px;
+  border-top-right-radius: 100px; }
+
+/* CRUCETA */
+#cruceta-centro, #cruceta-arriba, #cruceta-derecha, #cruceta-abajo, #cruceta-izquierda {
+  width: 25px;
+  height: 25px;
+  background: #DCDCDC;
+  position: absolute; }
+
+#cruceta {
+  width: 75px;
+  height: 75px;
+  align-self: center; }
+
+#cruceta-centro {
+  margin: 25px auto auto 25px;
+  position: absolute;
+  z-index: 100; }
+
+#cruceta-centro-tri {
+  width: 20px;
+  height: 20px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  margin: 2px auto auto 2px; }
+
+#cruceta-arriba {
+  margin: 0px auto auto 25px;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  box-shadow: -3px 2px 0px 1px #B0B0B0; }
+
+#cruceta-arriba-tri {
+  position: absolute;
+  border-style: solid;
+  border-color: transparent transparent rgba(0, 0, 0, 0.2) transparent;
+  margin: -1px auto auto 5px;
+  border-width: 8px; }
+
+#cruceta-derecha {
+  margin: 25px auto auto 50px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  box-shadow: -3px 2px 0px 1px #B0B0B0; }
+
+#cruceta-derecha-tri {
+  position: absolute;
+  border-style: solid;
+  border-color: transparent transparent transparent rgba(0, 0, 0, 0.2);
+  margin: 4px auto auto 10px;
+  border-width: 8px; }
+
+#cruceta-izquierda {
+  margin: 25px auto auto 0px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  box-shadow: -3px 2px 0px 1px #B0B0B0; }
+
+#cruceta-izquierda-tri {
+  position: absolute;
+  border-style: solid;
+  border-color: transparent rgba(0, 0, 0, 0.2) transparent transparent;
+  margin: 4px auto auto 0px;
+  border-width: 8px; }
+
+#cruceta-abajo {
+  margin: 50px auto auto 25px;
+  border-bottom-right-radius: 3px;
+  border-bottom-left-radius: 3px;
+  box-shadow: -3px 1px 0px 1px #B0B0B0; }
+
+#cruceta-abajo-tri {
+  position: absolute;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.2) transparent transparent transparent;
+  margin: 10px auto auto 4px;
+  border-width: 8px; }

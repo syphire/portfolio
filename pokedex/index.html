@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Pokédex CSS</title>
+		<link rel="stylesheet" href="style.css">
+		<link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600,700" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	</head>
+
+	<body>
+		<div id="pokedex">
+
+			<div id="arriba">
+				<div id="tapa">
+					<div id="pokeball-exterior">
+					</div>
+					<div id="tapa-interior">
+						<div id="barra-roja">
+						</div>
+						<div id="pokeball-interior">
+						</div>
+					</div>
+				</div>
+				<div id="union">
+					<div id="bisagra-uno">
+					</div>
+					<div id="bisagra-dos">
+					</div>
+					<div id="bisagra-tres">
+					</div>
+				</div>
+			</div>
+
+			<div id="abajo">
+
+				<div id="abajo-izquierda">
+					<div id="botones-verdes">
+						<div id="boton-verde-uno">
+						</div>
+						<div id="boton-verde-dos">
+						</div>
+					</div>
+					<div id="boton-azul">
+						<div id="reflejo-azul">
+						</div>
+					</div>
+				</div>
+
+				<div id="abajo-centro">
+					<div id="pantalla">
+						<div id="pantalla-interior">
+
+							<script>
+								$(document).ready(function(){
+
+									function capitalizeFirstLetter(string) {
+										return string.charAt(0).toUpperCase() + string.slice(1);
+									}
+
+									var getPokemon = function(){
+										$('#imagen-pokemon').html('');
+										$('#info-pokemon').html('');
+										$("#info-error").hide();
+										$("#img-error").hide();
+										$("#imagen-carga").show();
+										$("#texto-carga").show();
+										var pokemon = $('#pokemon').val().toLowerCase();
+										$.getJSON("https://pokeapi.co/api/v2/pokemon/" + pokemon + "/" + "?callback=", function(json) {
+											$('#imagen-pokemon').html('<img src="'+json.sprites.front_default+'"></img>');
+
+											var nombrePokemon = capitalizeFirstLetter(json.name);
+											$('#info-pokemon').html('<h2>'+nombrePokemon+'</h2>');
+
+											$('#info-pokemon').append('<h3>Types:</h3>');
+											$('#info-pokemon').append('<ul id="tipos">');
+											for (var data in json.types) {
+												var tipo = capitalizeFirstLetter(json.types[data].type.name);
+												$('#tipos').append('<li>'+tipo+'</li>');
+											}
+										
+											$("#texto-carga").hide();
+											$("#imagen-carga").hide();
+										})
+										.fail (function() {
+											$("#info-error").show();
+											$("#img-error").show();
+											$("#texto-carga").hide();
+											$("#imagen-carga").hide();
+										});
+									}
+
+									var siguientePagina = function() {
+
+									}
+
+									$('#buscar').click(getPokemon);
+									$('#boton-izquierda').click(siguientePagina);
+
+									$('#pokemon').keypress(function(e) {
+										if(e.which == 13) {
+											getPokemon();
+										}
+									});
+								});
+							</script>
+
+
+							<div id="caja-busqueda">
+								<input id="pokemon" type="text" placeholder="Pokémon name or number">
+								<button id="buscar">Search</button>
+							</div>
+							<div id="resultado-busqueda">
+								<h4 id="texto-carga">Loading...</h4>
+								<img id="imagen-carga" src="img/load.gif">
+								<h4 id="info-error">Pokémon not found</h4>
+								<img id="img-error" src="img/sad.gif">
+								<div id="imagen-pokemon">
+								</div>
+								<div id="info-pokemon">
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div id="pantalla-botones">
+						<div id="botones">
+							
+							<div id="boton-izquierda">
+								<div id="boton-interior-izq">
+								</div>
+							</div>
+							<div id="boton-derecha">
+								<div id="boton-interior-dcha">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id="abajo-derecha">
+					<div id="circulo">
+						<div id="circulo-interior">
+							<div id="cruceta">
+								<div id="cruceta-centro">
+									<div id="cruceta-centro-tri">
+									</div>
+								</div>
+								<div id="cruceta-arriba">
+									<div id="cruceta-arriba-tri">
+									</div>
+								</div>
+								<div id="cruceta-derecha">
+									<div id="cruceta-derecha-tri">
+									</div>
+								</div>
+								<div id="cruceta-abajo">
+									<div id="cruceta-abajo-tri">
+									</div>
+								</div>
+								<div id="cruceta-izquierda">
+									<div id="cruceta-izquierda-tri">
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</body>
+</html>
