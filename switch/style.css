@@ -1,0 +1,541 @@
+@font-face {
+  font-family: 'Nintendo Switch Font';
+  src: url(fonts/Nintendo_Switch_UI_Font.ttf);
+}
+
+html {
+  background-color: #F2F2F2;
+  font-size: 100%;
+  /* El valor predeterminado de la letra es de 10px */
+  font-family: 'Nintendo Switch Font', sans-serif;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+#switch {
+  width: 80em;
+  height: 27em;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+/** Joy-con izquierdo **/
+#joycon-izq {
+  width: 10vw;
+  height: auto;
+  background-color: #00AED7;
+  border-top-left-radius: 5em;
+  border-bottom-left-radius: 5em;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 'joycon-izq';
+}
+
+#joycon-izq #gatillo-izq {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: joycon-izq;
+  width: 7em;
+  height: 4.5em;
+  border-top-left-radius: 10em 8em;
+  border-top: black 5px solid;
+  border-left: 5px black solid;
+  margin-top: -0.3em;
+  margin-left: -0.2em;
+}
+
+#joycon-izq .controller {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: joycon-izq;
+  width: 10vw;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 4em 7.5em 7.5em 10rem;
+      grid-template-rows: 4em 7.5em 7.5em 10rem;
+}
+
+#menos,
+#mas .horizontal {
+  width: 1.5em;
+  height: 0.5em;
+  background-color: #1F2226;
+  margin-left: auto;
+  margin-top: 2em;
+  margin-right: 1em;
+}
+
+.joystick {
+  width: 4.5em;
+  height: 4.5em;
+  border-radius: 4.5em;
+  background-color: #31373D;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 'joystick';
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.joystick > .raya-arriba {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: joystick;
+  height: 0.55em;
+  border-right: 0.18em solid #1F2226;
+  margin: auto;
+  margin-top: 0;
+}
+
+.joystick > .raya-izquierda {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: joystick;
+  width: 0.55em;
+  height: calc(4.32em / 2);
+  border-bottom: 0.18em solid #1F2226;
+}
+
+.joystick > .circulo-interno {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: joystick;
+  width: 1.3em;
+  height: 1.3em;
+  padding: 1em;
+  border: 0.18em solid #1F2226;
+  border-radius: 5em;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.joystick > .raya-derecha {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: joystick;
+  width: 0.55em;
+  height: calc(4.32em / 2);
+  border-bottom: 0.18em solid #1F2226;
+  margin-left: auto;
+}
+
+.joystick > .raya-abajo {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: joystick;
+  height: 0.55em;
+  border-right: 0.18em solid #1F2226;
+  margin: auto;
+  margin-bottom: 0;
+}
+
+.cruceta {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 2em 2em 2em;
+      grid-template-rows: 2em 2em 2em;
+  color: #fff;
+  text-align: center;
+}
+
+.cruceta p {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.cruceta > .arriba,
+.cruceta > .abajo {
+  width: 2em;
+  height: 2em;
+  border-radius: 2em;
+  background-color: #31373D;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.cruceta > .arriba > .triangulo {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0.45em 0.7em 0.45em;
+  border-color: transparent transparent #000 transparent;
+  border-style: inset;
+  margin-top: 0.6em;
+  margin-left: 0.55em;
+  transform: rotate(0deg);
+  -webkit-transform: rotate(360deg);
+}
+
+.cruceta > .abajo > .triangulo {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0.7em 0.45em 0 0.45em;
+  border-color: #000 transparent transparent transparent;
+  border-style: inset;
+  margin-top: 0.75em;
+  margin-left: 0.55em;
+  transform: rotate(0deg);
+  -webkit-transform: rotate(360deg);
+}
+
+.cruceta .izquierda > .triangulo {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0.45em 0.7em 0.45em 0;
+  border-color: transparent #000 transparent transparent;
+  border-style: inset;
+  margin-top: 0.6em;
+  margin-left: 0.6em;
+  transform: rotate(0deg);
+  -webkit-transform: rotate(360deg);
+}
+
+.cruceta .derecha > .triangulo {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0.45em 0 0.45em 0.7em;
+  border-color: transparent transparent transparent #000;
+  border-style: inset;
+  margin-top: 0.6em;
+  margin-left: 0.7em;
+  transform: rotate(0deg);
+  -webkit-transform: rotate(360deg);
+}
+
+.cruceta > .izquierda-derecha {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 'cruceta';
+}
+
+.cruceta > .izquierda-derecha > .izquierda {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: cruceta;
+  justify-self: flex-start;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 2em;
+  height: 2em;
+  border-radius: 2em;
+  background-color: #31373D;
+  margin-left: 1.5em;
+}
+
+.cruceta > .izquierda-derecha > .derecha {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: cruceta;
+  justify-self: flex-end;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 2em;
+  height: 2em;
+  border-radius: 2em;
+  background-color: #31373D;
+  margin-right: 1.5em;
+}
+
+#captura {
+  width: 2em;
+  height: 2em;
+  background-color: #31373D;
+  -ms-grid-column-align: right;
+      justify-self: right;
+  margin-right: 2em;
+  border-radius: 0.3em;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 'captura';
+}
+
+#captura > .circulo-interno {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: captura;
+  width: 1.2em;
+  height: 1.2em;
+  border-radius: 1em;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  background-color: #000;
+}
+
+/** Joy-con derecho **/
+#joycon-der {
+  width: 10vw;
+  height: auto;
+  background-color: #FF483C;
+  border-top-right-radius: 5em;
+  border-bottom-right-radius: 5em;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 'joycon-der';
+}
+
+#joycon-der #gatillo-der {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: joycon-der;
+  width: 7em;
+  height: 4.5em;
+  border-top-right-radius: 10em 8em;
+  border-top: black 5px solid;
+  border-right: 5px black solid;
+  margin-top: -0.3em;
+  margin-left: 1.8em;
+}
+
+#joycon-der .controller {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: joycon-der;
+  width: 10vw;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 4em 7.5em 7.5em 10rem;
+      grid-template-rows: 4em 7.5em 7.5em 10rem;
+}
+
+#mas {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 'mas';
+}
+
+#mas .horizontal {
+  margin-right: auto;
+  margin-top: 2em;
+  margin-left: 1em;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: mas;
+}
+
+#mas .vertical {
+  height: 1.5em;
+  width: 0.5em;
+  background-color: #1F2226;
+  margin-right: auto;
+  margin-top: 1.5em;
+  margin-left: 1.5em;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: mas;
+}
+
+#home {
+  width: 2.2em;
+  height: 2.2em;
+  background-color: #887F7A;
+  -ms-grid-column-align: left;
+      justify-self: left;
+  margin-left: 2em;
+  border-radius: 2.2em;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 'home';
+}
+
+#home > .circulo-interno {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: home;
+  width: 1.7em;
+  height: 1.7em;
+  border-radius: 1.7em;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  background-color: #31373D;
+  background-image: url("home-button.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1.1em;
+}
+
+/** Pantalla **/
+#pantalla {
+  width: 60%;
+  height: 100%;
+  background-color: #31373D;
+  display: -ms-grid;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+      grid-template-areas: 'pantalla';
+}
+
+#pantalla:before {
+  content: "";
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: pantalla;
+  background: #F2F2F2;
+  width: 1em;
+  height: 1em;
+  border-radius: 0 0 1em;
+}
+
+#pantalla:after {
+  content: "";
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: pantalla;
+  background: #F2F2F2;
+  width: 1em;
+  height: 1em;
+  border-radius: 0 0 0 1em;
+  -ms-grid-column-align: end;
+      justify-self: end;
+}
+
+#pantalla-interior {
+  width: calc(100% - 3em);
+  height: calc(100% - 2.4em);
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: pantalla;
+  background-color: #000;
+  margin: 1.2em 1.5em;
+  border-radius: 1em;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 15em;
+}
+
+#pantalla-interior #logo-switch {
+  width: 100%;
+  height: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#pantalla-interior #logo-switch .logo-izq {
+  width: 50px;
+  height: 130px;
+  border: 12px solid #fff;
+  border-top-left-radius: 35px;
+  border-bottom-left-radius: 35px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin-top: auto;
+  margin-right: 1.2em;
+}
+
+#pantalla-interior #logo-switch .logo-izq > .circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0 auto;
+  margin-top: 1em;
+}
+
+#pantalla-interior #logo-switch .logo-der {
+  width: 50px;
+  height: 130px;
+  border-top: 12px solid #fff;
+  border-bottom: 12px solid #fff;
+  border-left: 8px solid #fff;
+  border-right: 8px solid #fff;
+  border-top-right-radius: 35px;
+  border-bottom-right-radius: 35px;
+  background-color: #fff;
+  margin-top: auto;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+}
+
+#pantalla-interior #logo-switch .logo-der > .circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  background-color: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: auto;
+  margin-top: 3.5em;
+}
+
+#pantalla-interior #texto-switch {
+  width: 100%;
+  height: 40%;
+  margin-top: 1.5em;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+#pantalla-interior #texto-switch .nintendo,
+#pantalla-interior #texto-switch .switch {
+  color: #fff;
+  font-size: 1.5em;
+  letter-spacing: 16;
+  margin: 0;
+  text-align: center;
+}
+
+#pantalla-interior #texto-switch .switch {
+  font-size: 3.4em;
+  letter-spacing: 8;
+}
+/*# sourceMappingURL=style.css.map */
