@@ -39,7 +39,7 @@ body {
 
 /** Joy-con izquierdo **/
 #joycon-izq {
-  width: 10vw;
+  width: 9em;
   height: auto;
   background-color: #00AED7;
   border-top-left-radius: 5em;
@@ -66,7 +66,7 @@ body {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: joycon-izq;
-  width: 10vw;
+  width: 9em;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 4em 7.5em 7.5em 10rem;
@@ -304,7 +304,7 @@ body {
 
 /** Joy-con derecho **/
 #joycon-der {
-  width: 10vw;
+  width: 9em;
   height: auto;
   background-color: #FF483C;
   border-top-right-radius: 5em;
@@ -331,7 +331,7 @@ body {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   grid-area: joycon-der;
-  width: 10vw;
+  width: 9em;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 4em 7.5em 7.5em 10rem;

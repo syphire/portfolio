@@ -35,7 +35,7 @@ body {
 
 /** Joy-con izquierdo **/
 #joycon-izq {
-    width: 10vw;
+    width: 9em;
     height: auto;
     background-color: $joycon-izquierda;
     border-top-left-radius: 5em;
@@ -56,7 +56,7 @@ body {
 
     .controller {
         grid-area: joycon-izq;
-        width: 10vw;
+        width: 9em;
         display: grid;
         grid-template-rows: 4em 7.5em 7.5em 10rem;
     }
@@ -255,7 +255,7 @@ body {
 
 /** Joy-con derecho **/
 #joycon-der {
-    width: 10vw;
+    width: 9em;
     height: auto;
     background-color: $joycon-derecha;
     border-top-right-radius: 5em;
@@ -276,7 +276,7 @@ body {
 
     .controller {
         grid-area: joycon-der;
-        width: 10vw;
+        width: 9em;
         display: grid;
         grid-template-rows: 4em 7.5em 7.5em 10rem;
     }
